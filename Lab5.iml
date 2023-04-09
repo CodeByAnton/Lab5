@@ -5,16 +5,25 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="11" jdkType="JavaSDK" />
+    <orderEntry type="jdk" jdkName="18" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="javax.xml.bind" level="project" />
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/build/libs/javax.xml.bind.jar!/" />
+          <root url="jar://$MODULE_DIR$/../AZATLAB5/target/lib/aether-api-1.0.0.v20140518.jar!/" />
+          <root url="jar://$MODULE_DIR$/../AZATLAB5/target/lib/aether-util-1.0.0.v20140518.jar!/" />
+          <root url="jar://$MODULE_DIR$/../AZATLAB5/target/lib/maven-install-plugin-3.1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../AZATLAB5/target/lib/plexus-utils-3.3.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../AZATLAB5/target/lib/mxparser-1.2.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../AZATLAB5/target/lib/xmlpull-1.1.3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../AZATLAB5/target/lib/xstream-1.4.19.jar!/" />
+          <root url="jar://$MODULE_DIR$/../AZATLAB5/target/lib/xstream-1.4.20.jar!/" />
+          <root url="file://$MODULE_DIR$" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/src" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>

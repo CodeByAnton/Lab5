@@ -4,5 +4,5 @@ package main.java.exeptions;
  * For exit from programm
  */
 
-public class ExitExeption extends InterruptedException{
+public class ExitException extends InterruptedException{
 }

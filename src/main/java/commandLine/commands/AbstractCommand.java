@@ -5,21 +5,21 @@ package main.java.commandLine.commands;
  */
 public abstract class AbstractCommand implements Executable{
     private final String name;
-    private final String descripion;
-    public AbstractCommand(String name,String descripion){
+    private final String description;
+    public AbstractCommand(String name,String description){
         this.name=name;
-        this.descripion=descripion;
+        this.description=description;
     }
     public String getName(){
         return name;
     }
     public String getDescripion(){
-        return descripion;
+        return description;
     }
     @Override
     public String toString(){
         return "name: "+this.name+"\n"+
-                "description: "+this.descripion;
+                "description: "+this.description;
     }
 
 }

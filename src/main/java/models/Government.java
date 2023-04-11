@@ -9,7 +9,7 @@ public enum Government {
      */
     public static String names(){
         StringBuilder nameList=new StringBuilder();
-        for (var forms:values()){
+        for (Government forms:values()){
             nameList.append(forms.name()).append("\n");
         }
         return nameList.substring(0,nameList.length()-1);

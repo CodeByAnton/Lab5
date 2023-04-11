@@ -3,19 +3,17 @@ package main.java.models.froms;
 import main.java.commandLine.*;
 import main.java.exeptions.ExceptionInFileMode;
 
-import main.java.models.Climate;
-
-import java.util.Locale;
+import main.java.models.Government;
 
 /**
- * Form for choose Climate
+ * Form for government
  */
 
-public class ClimateForm extends AbstractForm<Climate> {
+public class GovernmentForm extends AbstractForm<Government> {
     private final Printable console;
     private final UserInput scanner;
 
-    public ClimateForm(Printable console){
+    public GovernmentForm(Printable console){
         this.console=(Console.isFileMode())
                 ?new BlankConsole()
                 :console;
@@ -26,22 +24,24 @@ public class ClimateForm extends AbstractForm<Climate> {
 
     /**
      * Create new Enum element
-     * @return enum object {@link Climate}
+     * @return enum object {@link Government}
      */
+
     @Override
-    public Climate build() {
-        console.println("Виды климата: ");
-        console.println(Climate.names());
+    public Government build() {
+        console.println("Виды правительства: ");
+        console.println(Government.names());
         while (true){
-            console.println("Введите тип климата: ");
+            console.println("Введите тип правительства: " );
             String input= scanner.nextLine().trim();
             try {
-                //проверка
-                return Climate.valueOf(input.toUpperCase(Locale.ROOT));
+                return Government.valueOf(input.toUpperCase());
             } catch (IllegalArgumentException e){
-                console.printError("Такого климата нет в списке");
+                console.printError("Такого правительства нет в списке");
                 if (Console.isFileMode()) throw new ExceptionInFileMode();
             }
         }
     }
 }
+
+

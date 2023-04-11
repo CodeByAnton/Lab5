@@ -6,5 +6,5 @@ import java.io.IOException;
  * For wrong arguments command
  */
 
-public class WrongArgumentsExeption extends IOException {
+public class WrongArgumentsException extends IOException {
 }

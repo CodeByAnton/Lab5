@@ -10,7 +10,7 @@ public enum Climate {
      */
     public static String names(){
         StringBuilder nameList=new StringBuilder();
-        for (var forms:values()){
+        for (Climate forms:values()){
             nameList.append(forms.name()).append("\n");
         }
         return nameList.substring(0,nameList.length()-1);

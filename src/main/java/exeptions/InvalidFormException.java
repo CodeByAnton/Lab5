@@ -6,5 +6,5 @@ import java.io.IOException;
  * For incorrect completed froms
  */
 
-public class InvalidFormExeption extends IOException {
+public class InvalidFormException extends IOException {
 }

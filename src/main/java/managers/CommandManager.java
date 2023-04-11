@@ -42,15 +42,15 @@ public class CommandManager {
      *
      * @param name command
      * @param args of command
-     * @throws NonexistCommandExeption this command don't exist
-     * @throws WrongArgumentsExeption wrong arguments of command
-     * @throws CommandRuntimeExeption command throw mistake during execution
-     * @throws ExitExeption command caused exit
+     * @throws NonexistCommandException this command don't exist
+     * @throws WrongArgumentsException wrong arguments of command
+     * @throws CommandRuntimeException command throw mistake during execution
+     * @throws ExitException command caused exit
      */
 
-    public void execute(String name,String args) throws NonexistCommandExeption,WrongArgumentsExeption, CommandRuntimeExeption, ExitExeption{
+    public void execute(String name,String args) throws NonexistCommandException,WrongArgumentsException, CommandRuntimeException, ExitException{
         AbstractCommand command=commands.get(name);
-        if (command==null) throw new NonexistCommandExeption();
+        if (command==null) throw new NonexistCommandException();
         command.execute(args);
     }
 }

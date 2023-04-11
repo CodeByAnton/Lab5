@@ -21,6 +21,7 @@ public class Console implements Printable{
 
     @Override
     public void printError(String a) {
-        System.out.println(ConsoleColors.RED+a+ConsoleColors.RESET);
+        System.out.println("\u001B[31m"+a+"\u001B[0m");
+
     }
 }

@@ -32,7 +32,7 @@ public class Coordinates implements Validator {
     }
     @Override
     public String toString(){
-        return "Coordinate x "+this.x+"\n"
-                +"Coordinate y "+this.y;
+        return "Coordinate x: "+this.x
+                +" ;Coordinate y: "+this.y;
     }
 }

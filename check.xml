@@ -1,0 +1,39 @@
+<HashSet>
+  <City>
+    <id>1</id>
+    <name>hh</name>
+    <coordinates>
+      <x>111</x>
+      <y>1</y>
+    </coordinates>
+    <creationDate>2023-04-11 21:05:02.974 UTC</creationDate>
+    <area>121212.0</area>
+    <population>11</population>
+    <metersAboveSeaLevel>11</metersAboveSeaLevel>
+    <climate>MONSOON</climate>
+    <government>MONARCHY</government>
+    <standardOfLiving>NIGHTMARE</standardOfLiving>
+    <governor>
+      <name>ff</name>
+    </governor>
+  </City>
+  <City>
+    <id>2</id>
+    <name>ww</name>
+    <coordinates>
+      <x>12</x>
+      <y>11</y>
+    </coordinates>
+    <creationDate>2023-04-11 21:19:20.49 UTC</creationDate>
+    <area>11.0</area>
+    <population>111</population>
+    <metersAboveSeaLevel>1</metersAboveSeaLevel>
+    <climate>MONSOON</climate>
+    <government>MONARCHY</government>
+    <standardOfLiving>ULTRA_LOW</standardOfLiving>
+    <governor>
+      <name>www</name>
+    </governor>
+  </City>
+  <lastInitTime>2023-04-12T00:19:11.4476296</lastInitTime>
+</HashSet>

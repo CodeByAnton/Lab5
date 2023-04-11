@@ -1,11 +1,14 @@
 package main.java.commandLine.commands;
 
-import main.java.exeptions.ExitExeption;
+import main.java.exeptions.CommandRuntimeException;
+import main.java.exeptions.ExitException;
+import main.java.exeptions.WrongArgumentsException;
+
 
 /**
  * Interface for executable command
  */
 
 public interface Executable {
-    public void execute(String args) throws ClassCastException, ExitExeption, IllegalArgumentException;
+     void execute(String args) throws ExitException, WrongArgumentsException, CommandRuntimeException;
 }

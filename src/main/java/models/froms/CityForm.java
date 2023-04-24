@@ -85,6 +85,7 @@ public class CityForm extends AbstractForm<City>{
     private Long askMeterAboveSeaLevel(){
         while (true){
             console.println("Введите высоту над уровнем моря");
+
             String input=scanner.nextLine().trim();
             try{
                 return Long.parseLong(input);

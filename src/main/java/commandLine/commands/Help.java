@@ -4,6 +4,9 @@ import main.java.commandLine.Console;
 import main.java.exeptions.WrongArgumentsException;
 import main.java.managers.CommandManager;
 
+/**
+ * Command, that print all available commands and their description
+ */
 public class Help extends AbstractCommand{
     private CommandManager commandManager;
     private Console console;

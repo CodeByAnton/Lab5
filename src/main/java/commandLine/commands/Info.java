@@ -4,6 +4,9 @@ import main.java.commandLine.Console;
 import main.java.exeptions.WrongArgumentsException;
 import main.java.managers.CollectionManager;
 
+/**
+ * Command that print information about collection
+ */
 public class Info extends AbstractCommand{
     private CollectionManager collectionManager;
     private Console console;
@@ -18,7 +21,7 @@ public class Info extends AbstractCommand{
     @Override
     public void execute(String args) throws WrongArgumentsException {
         if (!args.isBlank()) throw new WrongArgumentsException();
-        String lastInitTime = (collectionManager.getLastInitTime() == null)
+        String lastInitTime = (collectionManager.getLastInitTime() == null || collectionManager.getCollection().size()==0)
                 ? "В сессии коллекция не инициализирована"
                 : collectionManager.getLastInitTime().toString();
         StringBuilder stringBuilder = new StringBuilder();

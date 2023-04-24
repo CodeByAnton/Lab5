@@ -4,6 +4,9 @@ import main.java.commandLine.Console;
 import main.java.exeptions.WrongArgumentsException;
 import main.java.managers.CollectionManager;
 
+/**
+ * Command that clear collection
+ */
 public class Clear extends AbstractCommand{
     private CollectionManager collectionManager;
     private Console console;

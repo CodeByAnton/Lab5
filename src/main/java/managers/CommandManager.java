@@ -2,6 +2,7 @@ package main.java.managers;
 
 import main.java.commandLine.commands.AbstractCommand;
 
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -51,6 +52,10 @@ public class CommandManager {
     public void execute(String name,String args) throws NonexistCommandException,WrongArgumentsException, CommandRuntimeException, ExitException{
         AbstractCommand command=commands.get(name);
         if (command==null) throw new NonexistCommandException();
-        command.execute(args);
+        try {
+            command.execute(args);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

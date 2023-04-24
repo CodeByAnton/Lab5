@@ -10,6 +10,9 @@ import main.java.models.City;
 import java.util.Collection;
 import java.util.Comparator;
 
+/**
+ *
+ */
 public class PrintAscending extends AbstractCommand{
     private CollectionManager collectionManager;
     private Console console;

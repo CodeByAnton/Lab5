@@ -29,15 +29,19 @@ public class RemoveGreater extends AbstractCommand{
             City newElement=new CityForm(console).build();
             console.println(("Создание объекта City завершено"));
             Collection<City> forRemove=collectionManager.getCollection()
-                    .stream().filter(Objects::nonNull)
-                    .filter(city->city.compareTo(newElement)>0).toList();
+                    .stream()
+                    .filter(Objects::nonNull)
+                    .filter(city->city.compareTo(newElement)>0)
+                    .toList();
             collectionManager.removeElements(forRemove);
             console.println("Удалены элементы больше чем заданный ");
+
 
         }catch (AbsenceElementException e){
             console.printError("В коллекции нет элеметов");
         } catch (ExceptionInFileMode e){
             console.printError("Поля в файле не валидны, объект не создан");
+
         }
     }
 }

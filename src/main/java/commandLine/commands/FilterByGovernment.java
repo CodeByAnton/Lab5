@@ -10,6 +10,9 @@ import main.java.models.Government;
 
 import java.util.Collection;
 
+/**
+ * Command that print all collection{@link City} element, which field equals given
+ */
 public class FilterByGovernment extends AbstractCommand{
     private CollectionManager collectionManager;
     private Console console;

@@ -1,9 +1,11 @@
 package main.java.managers;
 
 import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.converters.ConversionException;
 import com.thoughtworks.xstream.io.StreamException;
 import com.thoughtworks.xstream.security.AnyTypePermission;
 import main.java.commandLine.Console;
+import main.java.exeptions.EmptyCollectionException;
 import main.java.exeptions.ExitException;
 import main.java.exeptions.InvalidFormException;
 import main.java.models.*;
@@ -42,6 +44,8 @@ public class FileManager {
 
     }
 
+
+
     /**
      * Read collection from file
      */
@@ -68,7 +72,7 @@ public class FileManager {
                 return;
             }
             this.text = stringBuilder.toString();
-        } catch (FileNotFoundException fnfe) {
+        } catch (FileNotFoundException e) {
             console.printError("Такого файла не найдено");
             throw new ExitException();
         } /*catch (IOException ioe) {
@@ -77,11 +81,12 @@ public class FileManager {
         }*/
     }
 
+
     /**
      * Create objects
      * @throws ExitException when objects not valid
      */
-    public void createObjects() throws ExitException{
+    public void createObjects() throws ExitException, NullPointerException {
         try{
             XStream xstream=new XStream();
             xstream.alias("City",City.class);
@@ -100,10 +105,12 @@ public class FileManager {
             }
             this.collectionManager.addElements(collectionManagerWithObjects.getCollection());
 
-        }catch (InvalidFormException | StreamException e){
+        }catch (InvalidFormException | StreamException |ConversionException | NullPointerException e){
 
-            console.printError("Объекты в файле не валидны");
+            if (new File(filePath).length()!=0) {
 
+                console.printError("Объекты в файле не валидны");
+            }
 
         }
         City.updateId(collectionManager.getCollection());
@@ -112,20 +119,21 @@ public class FileManager {
     /**
      * Save collection in file
      */
-    public void saveObjects() {
-        if (filePath==null || filePath.isEmpty()){
-            console.printError("Путь должен передаваться при помощи аргумента командной строки");
+    public void saveObjects() throws EmptyCollectionException{
+        if (collectionManager.getCollection().size() == 0) {
+            throw new EmptyCollectionException();
 
-        }
-        else console.println("Путь получен успешно");
-        try {
-            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(filePath), StandardCharsets.UTF_8);
-            this.xStream.toXML(collectionManager, writer);
-            writer.close();
-        } catch (FileNotFoundException e) {
-            console.printError("Файл не существует");
-        } catch (IOException e) {
-            console.printError("Ошибка ввода вывода");
+        } else {
+
+            try {
+                OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(filePath), StandardCharsets.UTF_8);
+                this.xStream.toXML(collectionManager, writer);
+                writer.close();
+            } catch (FileNotFoundException e) {
+                console.printError("Файл не существует");
+            } catch (IOException e) {
+                console.printError("Ошибка ввода вывода");
+            }
         }
     }
 }

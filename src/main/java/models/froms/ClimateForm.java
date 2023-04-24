@@ -37,7 +37,12 @@ public class ClimateForm extends AbstractForm<Climate> {
             String input= scanner.nextLine().trim();
             try {
                 //проверка
-                return Climate.valueOf(input.toUpperCase(Locale.ROOT));
+                if ("".equals(input)){
+                    return null;
+                }
+                else {
+
+                    return Climate.valueOf(input.toUpperCase(Locale.ROOT));}
             } catch (IllegalArgumentException e){
                 console.printError("Такого климата нет в списке");
                 if (Console.isFileMode()) throw new ExceptionInFileMode();

@@ -2,8 +2,7 @@ package main.java.models;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
-import java.time.LocalDateTime;
-import java.time.ZonedDateTime;
+
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Objects;
@@ -14,7 +13,7 @@ public class City implements Validator,Comparable<City>{
     private int id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
     private String name; //Поле не может быть null, Строка не может быть пустой
     private Coordinates coordinates; //Поле не может быть null
-    private java.util.Date creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
+    private Date creationDate; //Поле не может быть null, Значение этого поля должно генерироваться автоматически
     private double area; //Значение поля должно быть больше 0
     private Integer population; //Значение поля должно быть больше 0, Поле не может быть null
     private Long metersAboveSeaLevel;
@@ -111,7 +110,7 @@ public class City implements Validator,Comparable<City>{
 
     @Override
     public int compareTo(City o){
-        return this.id-o.id;
+        return this.population-o.population;
     }
 
     /**
@@ -131,17 +130,17 @@ public class City implements Validator,Comparable<City>{
     @Override
     public String toString(){
         return "City{"+'\n'+
-                "id = "+id+'\n'+
-                "name = "+name+'\n'+
-                "coordinates = "+coordinates+'\n'+
-                "creationDate = "+creationDate+'\n'+
-                "area = "+area+'\n'+
-                "population = "+population+'\n'+
-                "metersAboveSeaLevel = "+metersAboveSeaLevel+'\n'+
-                "climate = "+climate+'\n'+
-                "government = "+government+'\n'+
-                "standardOfLiving = "+standardOfLiving+'\n'+
-                "governor = "+governor+'\n'+
+                "id: "+id+'\n'+
+                "name: "+name+'\n'+
+                "coordinates: "+coordinates+'\n'+
+                "creationDate: "+creationDate+'\n'+
+                "area: "+area+'\n'+
+                "population: "+population+'\n'+
+                "metersAboveSeaLevel: "+metersAboveSeaLevel+'\n'+
+                "climate: "+climate+'\n'+
+                "government: "+government+'\n'+
+                "standardOfLiving: "+standardOfLiving+'\n'+
+                "governor: "+governor+'\n'+
                 '}';
 
 

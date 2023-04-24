@@ -4,6 +4,9 @@ import main.java.exeptions.CommandRuntimeException;
 import main.java.exeptions.ExitException;
 import main.java.exeptions.WrongArgumentsException;
 
+/**
+ * Command that exit from program
+ */
 public class Exit extends AbstractCommand{
     public Exit(){
         super("exit",": завершить программу");

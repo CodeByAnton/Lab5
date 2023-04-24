@@ -8,7 +8,7 @@ import main.java.managers.CommandManager;
 import java.util.List;
 
 /**
- * print last 14 command
+ * Command that print last 14 command, without their arguments
  */
 public class History extends AbstractCommand{
     private CommandManager commandManager;

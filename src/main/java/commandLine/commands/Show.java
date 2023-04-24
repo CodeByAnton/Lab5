@@ -6,6 +6,8 @@ import main.java.managers.CollectionManager;
 import main.java.models.City;
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.TreeSet;
 
 public class Show extends AbstractCommand{
     private CollectionManager collectionManager;
@@ -22,6 +24,10 @@ public class Show extends AbstractCommand{
     public void execute(String args) throws WrongArgumentsException {
         if (!args.isBlank()) throw new WrongArgumentsException();
         Collection<City> collection = collectionManager.getCollection();
+
+
+
+
         if (collection == null || collection.isEmpty()) {
             console.printError("Коллекцмя еще не инициализирована");
             return;

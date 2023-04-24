@@ -29,11 +29,15 @@ public class ExecuteFileManager implements UserInput{
     }
 
     @Override
-    public String nextLine() {
+    public String nextLine()  {
+
         try{
             return readLine();
         } catch (IOException e){
             return "";
         }
+    }
+    public static ArrayDeque<BufferedReader> getFileReaders() {
+        return fileReaders;
     }
 }

@@ -1,7 +1,9 @@
 package main.java.managers;
 
+import main.java.exeptions.ExitException;
 import main.java.exeptions.InvalidFormException;
 import main.java.models.City;
+
 
 import java.time.LocalDateTime;
 
@@ -56,7 +58,10 @@ public class CollectionManager {
         collection.remove(city);
     }
     public void addElement(City city) throws InvalidFormException{
-        if (!city.validate()) throw new InvalidFormException();
+        if (!(city.validate()&& city.getCoordinates().validate() && city.getGovernor().validate())) {
+            throw new InvalidFormException() ;
+
+        }
         collection.add(city);
     }
     public void editById(int id, City newElement) throws InvalidFormException{

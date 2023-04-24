@@ -11,10 +11,15 @@ import main.java.models.froms.CityForm;
 import java.util.Collection;
 import java.util.Objects;
 
+/**
+ * Command, that remove from collection all elements which are lower than given
+ */
+
 public class RemoveLower extends AbstractCommand{
 
     private CollectionManager collectionManager;
     private Console console;
+
     public RemoveLower(Console console,CollectionManager collectionManager){
         super("remove_lower"," {element}: удалить из коллекции все элементы, меньше заданный");
         this.collectionManager=collectionManager;

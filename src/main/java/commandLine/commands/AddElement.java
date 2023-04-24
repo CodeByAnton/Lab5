@@ -6,6 +6,9 @@ import main.java.managers.CollectionManager;
 import main.java.models.City;
 import main.java.models.froms.CityForm;
 
+/**
+ * Command that create new City element and add his in to collection{@link City}
+ */
 public class AddElement extends AbstractCommand{
     private CollectionManager collectionManager;
     private Console console;

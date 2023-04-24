@@ -27,8 +27,13 @@ public class Coordinates implements Validator {
 
     @Override
     public boolean validate() {
-        if (this.x<=-143 || this.x==null) return false;
-        return !(this.y==null || this.y<=-906);
+
+
+
+        if (this.x <= -143 || this.x == null) return false;
+        return !(this.y == null || this.y <= -906);
+
+
     }
     @Override
     public String toString(){

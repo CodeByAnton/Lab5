@@ -20,6 +20,6 @@ public class Human implements Validator{
     }
     @Override
     public String toString(){
-        return "Name: "+this.name;
+        return "name: "+this.name;
     }
 }
